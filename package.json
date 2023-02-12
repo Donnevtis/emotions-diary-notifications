@@ -1,6 +1,6 @@
 {
   "name": "emotion-diary-notification-service",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Notification service for emotion diary telegram bot",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "3.267.0",
+    "@aws-sdk/util-dynamodb": "3.267.0",
     "dayjs": "1.11.7",
     "dotenv": "16.0.3",
     "dotenv-parse-variables": "2.0.0",
