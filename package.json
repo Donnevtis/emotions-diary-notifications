@@ -1,6 +1,6 @@
 {
   "name": "emotion-diary-notification-service",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Notification service for emotion diary telegram bot",
   "main": "index.js",
   "scripts": {
