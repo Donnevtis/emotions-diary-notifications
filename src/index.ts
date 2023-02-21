@@ -1,7 +1,7 @@
 import { Handler } from '@yandex-cloud/function-types';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
-import { findUsersByTimer, sendNotification } from './api';
+import { findUsersByTimer, getUserLanguage, sendNotification } from './api';
 import { errorHandler, logger } from './utils';
 
 dayjs.extend(customParseFormat);
@@ -27,7 +27,16 @@ export const handler: Handler.Timer = async ({
 
       if (!countUsers) return;
 
-      users.forEach(sendNotification);
+      users.forEach(async ({ user_id, notify, language_code }) =>
+        sendNotification({
+          user_id,
+          notify,
+          language_code: (await getUserLanguage(user_id)) || language_code,
+        }),
+      );
     })
-    .catch(error => functionErrorHandler(error, handler.name, { timer }));
+    .catch(error => {
+      functionErrorHandler(error, handler.name, { timer });
+      throw new Error('Notification error!');
+    });
 };
