@@ -3,11 +3,11 @@ import { once } from 'events'
 
 type GetZipBuffer = (p: string) => Promise<{ content: Buffer; pointer: number }>
 
-const getZipBuffer: GetZipBuffer = async folderPath => {
+const getZipBuffer: GetZipBuffer = async (folderPath) => {
   const archive = archiver('zip')
   const buffer: Buffer[] = []
 
-  archive.on('data', data => {
+  archive.on('data', (data) => {
     buffer.push(data)
   })
 

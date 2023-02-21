@@ -1,10 +1,10 @@
-import pino from 'pino';
+import pino from 'pino'
 
 export const logger = pino({
   transport: {
     target: 'pino-pretty',
   },
-});
+})
 
 export const errorHandler =
   (typeException: string) => (error: unknown, method: string, data: object) => {
@@ -13,10 +13,10 @@ export const errorHandler =
         `${typeException}. ${method}: ${error.message}. Cause: ${
           error.cause
         }. Data: ${JSON.stringify(data)} `,
-      );
+      )
 
-      return null;
+      return null
     }
 
-    throw error;
-  };
+    throw error
+  }

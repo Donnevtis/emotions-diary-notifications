@@ -1,19 +1,19 @@
 export type FunctionConfig = {
-  functionId: string;
-  runtime: string;
-  entrypoint: string;
+  functionId: string
+  runtime: string
+  entrypoint: string
   resources: {
-    memory: number;
-  };
+    memory: number
+  }
   executionTimeout: {
-    seconds: number;
-  };
-  environment?: Record<string, string>;
-  serviceAccountId?: string;
+    seconds: number
+  }
+  environment?: Record<string, string>
+  serviceAccountId?: string
   secrets?: {
-    id: string;
-    versionId: string;
-    environmentVariable: string;
-    key: string;
-  }[];
-};
+    id: string
+    versionId: string
+    environmentVariable: string
+    key: string
+  }[]
+}

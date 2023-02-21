@@ -1,4 +1,4 @@
-import i18next from 'i18next';
+import i18next from 'i18next'
 
 export const i18n = (lng: string) => {
   i18next.init({
@@ -19,7 +19,7 @@ export const i18n = (lng: string) => {
         },
       },
     },
-  });
+  })
 
-  return i18next.t;
-};
+  return i18next.t
+}

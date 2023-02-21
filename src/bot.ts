@@ -1,5 +1,5 @@
-import { Telegram } from 'telegraf';
+import { Telegram } from 'telegraf'
 
-const bot = new Telegram(String(process.env.BOT_TOKEN));
+const bot = new Telegram(String(process.env.BOT_TOKEN))
 
-export default bot;
+export default bot

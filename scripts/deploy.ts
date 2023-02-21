@@ -1,9 +1,9 @@
-import { MiBtoByte } from './utils';
-import environment from './environment';
-import { deploy } from './function-service';
-import { FunctionConfig } from './types';
+import { MiBtoByte } from './utils'
+import environment from './environment'
+import { deploy } from './function-service'
+import { FunctionConfig } from './types'
 
-const { FUNCTION_ID, LOCKBOX_ID, LOCKBOX_VERSION, SA_ID } = environment;
+const { FUNCTION_ID, LOCKBOX_ID, LOCKBOX_VERSION, SA_ID } = environment
 
 const partial: FunctionConfig = {
   functionId: FUNCTION_ID,
@@ -58,6 +58,6 @@ const partial: FunctionConfig = {
     },
   ],
   serviceAccountId: SA_ID,
-};
+}
 
-deploy(partial, 'dist/');
+deploy(partial, 'dist/')
